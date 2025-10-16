@@ -1,19 +1,14 @@
+<h1>Listar Tarefas</h1>
+<ul>
+{% for todo in todos %}
+  <li>
+    {{ todo.title }} - {{ todo.description }}
+    - <a href="{% url 'todo_update' todo.pk %}">Editar</a>
+    - <a href="{% url 'todo_delete' todo.pk %}">Deletar</a>
+  </li>
+{% empty %}
+  <li>Nenhuma tarefa cadastrada</li>
+{% endfor %}
+</ul>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Lista de Tarefas</title>
-</head>
-<body>
-  <h1>Lista de Tarefas</h1>
-  <ul>
-    {% for todo in todos %}
-      <li><strong>{{ todo.title }}</strong> - {{ todo.description }}
-    {% empty %}
-      <li>Nenhuma tarefa cadastrada</li>
-    {% endfor %}
-  </ul>
-  <a href="{% url 'todo_create' %}">Nova Tarefa</a>
-</body>
-</html>
+<a href="{% url 'todo_create' %}">Nova tarefa</a>

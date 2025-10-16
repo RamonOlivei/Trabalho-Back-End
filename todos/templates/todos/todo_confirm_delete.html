@@ -1,0 +1,8 @@
+<h1>Confirmação de Exclusão</h1>
+<p>Você tem certeza que deseja deletar a tarefa: <strong>{{ object.title }}</strong>?</p>
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Sim, deletar</button>
+  <a href="{% url 'todo_list' %}">Cancelar</a>
+</form>
