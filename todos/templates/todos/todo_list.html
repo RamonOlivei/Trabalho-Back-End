@@ -3,6 +3,16 @@
 {% for todo in todos %}
   <li>
     {{ todo.title }} - {{ todo.description }}
+    {% if not todo.is_completed %}
+      <form action="{% url 'todo_completar' todo.pk %}" method="post" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit">Marcar como Concluida</button>
+      </form>
+
+      {% else %}
+    <span>✔ Concluída</span>
+      {% endif %}
+
     - <a href="{% url 'todo_update' todo.pk %}">Editar</a>
     - <a href="{% url 'todo_delete' todo.pk %}">Deletar</a>
   </li>
