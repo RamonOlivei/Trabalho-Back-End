@@ -2,7 +2,7 @@
 <ul>
 {% for todo in todos %}
   <li>
-    {{ todo.title }} - {{ todo.description }}
+    {{ todo.title }} - {{ todo.description }} - Categoria: {{ todo.category.name }} -
     {% if not todo.is_completed %}
       <form action="{% url 'todo_completar' todo.pk %}" method="post" style="display: inline;">
         {% csrf_token %}

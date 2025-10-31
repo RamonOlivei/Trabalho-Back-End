@@ -1,7 +1,7 @@
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, View
 from django.urls import reverse_lazy
 from django.shortcuts import redirect, get_object_or_404  # Para buscar objetos e redirecionar
-from .models import Todo
+from .models import Todo, Category
 
 class TodoListView(ListView):
     model = Todo

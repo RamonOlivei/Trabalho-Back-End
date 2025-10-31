@@ -1,6 +1,19 @@
 <h1>Nova Tarefa</h1>
 <form method="POST">
   {% csrf_token %}
+  <label>Title:</label>
+  {{ form.title }}<br>
+
+  <label>Description:</label>
+  {{  form.category  }} <br>
+
+  <label>Category:</label>
+  {{ form.category }} <br>
+
+  <label">Completed:</label>
+  {{ form.is_completed }} <br>
+
+
   {{ form }}
   <button type="submit">Salvar</button>
 </form>
